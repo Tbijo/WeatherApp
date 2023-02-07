@@ -32,8 +32,13 @@ class MainActivity : ComponentActivity() {
         permissionLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) {
+            // no need to check weather the user allowed the permissions here because we did that
+            // in the data layer /location
             viewModel.loadWeatherInfo()
         }
+        // If the user did not permit he will be stuck and force to relaunch the app
+        // TODO Make a button which will launch permission launcher again
+        // it will cause a recomposition because the call function is in the permission launcher already
         permissionLauncher.launch(arrayOf(
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION,

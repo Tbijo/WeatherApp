@@ -43,7 +43,7 @@ fun WeatherCard(
                             DateTimeFormatter.ofPattern("HH:mm")
                         )
                     }",
-                    modifier = Modifier.align(Alignment.End),
+                    modifier = Modifier.align(Alignment.End), // put text in right corner of Column
                     color = Color.White
                 )
                 Spacer(modifier = Modifier.height(16.dp))

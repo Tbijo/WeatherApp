@@ -28,6 +28,7 @@ class WeatherViewModel @Inject constructor(
                 error = null
             )
             locationTracker.getCurrentLocation()?.let { location ->
+                // if we have location start downloading weather data
                 when(val result = repository.getWeatherData(location.latitude, location.longitude)) {
                     is Resource.Success -> {
                         state = state.copy(
@@ -44,6 +45,7 @@ class WeatherViewModel @Inject constructor(
                         )
                     }
                 }
+                // if Location is null execute run block
             } ?: kotlin.run {
                 state = state.copy(
                     isLoading = false,

@@ -7,7 +7,7 @@ import com.plcoding.weatherapp.domain.util.Resource
 import com.plcoding.weatherapp.domain.weather.WeatherInfo
 import javax.inject.Inject
 
-class WeatherRepositoryImpl @Inject constructor(
+class WeatherRepositoryImpl @Inject constructor( // Inject = Hilt will create an instance
     private val api: WeatherApi
 ): WeatherRepository {
 

@@ -15,6 +15,8 @@ fun WeatherForecast(
     state: WeatherState,
     modifier: Modifier = Modifier
 ) {
+    // get 0 is for today
+    // get 1 is for tomorrow
     state.weatherInfo?.weatherDataPerDay?.get(0)?.let { data ->
         Column(
             modifier = modifier

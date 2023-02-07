@@ -22,7 +22,11 @@ fun HourlyWeatherDisplay(
     modifier: Modifier = Modifier,
     textColor: Color = Color.White
 ) {
+    // remember refresh formattedTime when weatherData changes
     val formattedTime = remember(weatherData) {
+        // advantage of remember is that this will be refreshed
+        // when the weatherData changes
+        // and not every time HourlyWeatherDisplay is updated
         weatherData.time.format(
             DateTimeFormatter.ofPattern("HH:mm")
         )
